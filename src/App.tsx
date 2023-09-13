@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Dropdown from "./components/Dropdown/Dropdown";
 
 function App() {
+  const options = [
+    {
+      id: "monday",
+      label: "Monday",
+    },
+    {
+      id: "tuesday",
+      label: "Tuesday",
+    },
+    {
+      id: "wednesday",
+      label: "Wednesday",
+    },
+    {
+      id: "thursday",
+      label: "Thursday",
+    },
+    {
+      id: "friday",
+      label: "Friday",
+    },
+    {
+      id: "saturday",
+      label: "Saturday",
+    },
+    {
+      id: "sunday",
+      label: "Sunday",
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown options={options} />
+      <Dropdown options={options} placeholder={"Select (Multi)"} isMulti />
     </div>
   );
 }
